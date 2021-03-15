@@ -8,7 +8,7 @@ router.get('/create', (req, res) => {
 router.post('/create', async (req, res) => {
     let hotelData = extractData(req);
     try {
-        await create(hoteltData, req.user._id);
+        await create(hotelData, req.user._id);
         res.redirect('/');
     } catch (error) {
         res.render('create', { error });
@@ -53,7 +53,7 @@ router.post('/:id/edit', async (req, res) => {
 function extractData(req) {
     let { hotel, city, imageUrl, freeRooms } = req.body;
 
-    return courseData = {
+    return hotelData = {
         hotel,
         city,
         freeRooms,

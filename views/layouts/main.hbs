@@ -9,11 +9,6 @@
 
 <body>
     <div id="container">
-        {{#if error}}
-            <section class="notifications">
-                <p class="notification-message">{{error.message}}</p>
-            </section>
-        {{/if}}
 
         <nav>
             {{#if user}}
@@ -24,7 +19,7 @@
                     </ul>
                 </div>
                 <div class="right-container">
-                    <a href="/profile" class="log-out">{{user.name}}</a>
+                    <a href="/profile" class="log-out">{{user.username}}</a>
                     <a href="/auth/logout" class="log-out">Logout</a>
                 </div>
             {{else}}
@@ -37,6 +32,16 @@
                 </div>
             {{/if}}
         </nav>
+
+        {{#if error}}
+            <div>
+                {{!-- <div class="notification loadingBox">Loading …</div>
+                <div class="notification infoBox"><span>Info</span></div> --}}
+                <div class="notification errorBox">
+                    <span>{{error.message}}</span>
+                </div>
+            </div>
+        {{/if}}
 
         {{{body}}}
 

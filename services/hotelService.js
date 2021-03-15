@@ -1,7 +1,7 @@
 const Hotel = require('../models/Hotel');
 
 async function getAll() {
-    return await Hotel.find({}).lean();
+    return await Hotel.find({}).sort({ freeRooms: -1 }).lean();
 }
 
 async function getOne(hotelId, userId) {

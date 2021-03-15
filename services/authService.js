@@ -3,11 +3,13 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const { SECRET } = require('../config/config');
 
-async function register(username, password) {
-    let existing = await User.findOne({ username });
-    if (existing) throw { message:  'Username already exists, choose a new one' };
+async function register(email, username, password) {
+    let existingEmail = await User.findOne({ email });
+    let existingUsername = await User.findOne({ username });
+    if (existingEmail) throw { message:  'User with that email already exists' };
+    if (existingUsername) throw { message:  'Username already exists, choose a new one' };
 
-    let user = new User({ username, password });
+    let user = new User({ email, username, password });
     return await user.save();
 }
 

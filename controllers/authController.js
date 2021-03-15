@@ -28,15 +28,16 @@ router.get('/register', isGuest, (req, res) => {
 });
 
 router.post('/register', isGuest, async (req, res) => {
-    let { username, password, repeatPassword } = req.body;
+    let { email, username, password, rePassword } = req.body;
     
     try {
+        if (!email) throw { message: 'Email required' };
         if (!username) throw { message: 'Username required' };
         if (!password) throw { message: 'Password required' };
-        if (!repeatPassword) throw { message: 'Password required' };
-        if (password != repeatPassword) throw { message: 'Password missmatch!' };
+        if (!rePassword) throw { message: 'Password required' };
+        if (password != rePassword) throw { message: 'Password missmatch!' };
         
-        await register(username, password);
+        await register(email, username, password);
 
         let token = await login(username, password);
         res.cookie(COOKIE_NAME, token, { httpOnly: true });
