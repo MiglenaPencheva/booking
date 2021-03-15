@@ -3,6 +3,15 @@ const bcrypt = require('bcrypt');
 const { SALT_ROUNDS } = require('../config/config');
 
 const userScheme = new mongoose.Schema({
+    email: {
+        type: String,
+        required: ['Email is required'],
+        unique: true,
+        validate: {
+            validator: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
+            message: 'Valid email address required'
+        },
+    },
     username: {
         type: String,
         required: ['Username is required'],
@@ -13,19 +22,10 @@ const userScheme = new mongoose.Schema({
         type: String,
         required: true,
         trim: true,
-        minlength: [3, 'Password should be at least 6 characters long'],
+        minlength: [5, 'Password should be at least 5 characters long'],
         validate: {
             validator: /^[a-zA-z0-9]$/,
             message: 'Password should contains only english letters and digits'
-        },
-    },
-    email: {
-        type: String,
-        required: ['Email is required'],
-        unique: true,
-        validate: {
-            validator: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
-            message: 'Valid email address required'
         },
     },
     hotelsBooked: [{
