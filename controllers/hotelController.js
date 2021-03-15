@@ -23,7 +23,7 @@ router.get('/:id/details', async (req, res) => {
 router.get('/:id/delete', async (req, res) => {
     try {
         let hotel = await getOne(req.params.id, req.user._id);
-        if (hotel.creator == req.user._id) {
+        if (hotel.owner == req.user._id) {
             await deleteHotel(req.params.id);
             res.redirect('/');
         }
