@@ -1,4 +1,4 @@
-const DATABASE_NAME = '';
+const DATABASE_NAME = 'hotels';
 
 const config = {
     PORT: 6000,
