@@ -12,6 +12,12 @@ const hotelScheme = new mongoose.Schema({
         required: ['Description is required'],
         minlength: [3, 'City should be at least 3 characters long']
     },
+    freeRooms: {
+        type: Number,
+        required: ['Rooms number is required'],
+        min: [1, 'The number of free rooms should be between 1 and 100'],
+        max: [100, 'The number of free rooms should be between 1 and 100'],
+    },
     imageUrl: {
         type: String,
         required: ['Image is required'],
@@ -19,12 +25,6 @@ const hotelScheme = new mongoose.Schema({
             validator: (v) => /^https?:\/\//,
             message: (props) => `Invalid URL`
         }
-    },
-    freeRooms: {
-        type: Number,
-        required: ['Rooms number is required'],
-        min: [1, 'The number of free rooms should be between 1 and 100'],
-        max: [100, 'The number of free rooms should be between 1 and 100'],
     },
     usersBookedRoom: [{
         type: mongoose.Types.ObjectId,

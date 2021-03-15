@@ -1,5 +1,5 @@
 <section id="viewCatalog" class="background-img">
-    
+
     {{#if hotels}}
 
         <div class="added-hotels">
@@ -8,58 +8,28 @@
                 {{> hotel}}
             {{/each}}
 
-        {{!-- <a href="" class="added-hotel">
-            <img src="https://image.freepik.com/free-vector/flat-hotel-building_23-2148162501.jpg" alt=""
-                class="picture-added-hotel">
-            <h3>Hilton Toronto</h3>
-            <span>Free rooms: 42</span>
-        </a>
-        <a href="" class="added-hotel">
-            <img src="https://image.freepik.com/free-vector/flat-hotel-building-town_52683-10040.jpg" alt=""
-                class="picture-added-hotel">
-            <h3>Auckland Inn</h3>
-            <span>Free rooms: 35</span>
-        </a>
-        <a href="" class="added-hotel">
-            <img src="https://image.freepik.com/free-vector/showplace-illustration-with-all-famous-buildings-linear-banner_1416-984.jpg"
-                alt="" class="picture-added-hotel">
-            <h3>Hotel Berlin</h3>
-            <span>Free rooms: 15</span>
-        </a> --}}
+            {{!-- <a href="" class="added-hotel">
+                <img src="https://image.freepik.com/free-vector/flat-hotel-building_23-2148162501.jpg" alt=""
+                    class="picture-added-hotel">
+                <h3>Hilton Toronto</h3>
+                <span>Free rooms: 42</span>
+            </a>
+            <a href="" class="added-hotel">
+                <img src="https://image.freepik.com/free-vector/flat-hotel-building-town_52683-10040.jpg" alt=""
+                    class="picture-added-hotel">
+                <h3>Auckland Inn</h3>
+                <span>Free rooms: 35</span>
+            </a>
+            <a href="" class="added-hotel">
+                <img src="https://image.freepik.com/free-vector/showplace-illustration-with-all-famous-buildings-linear-banner_1416-984.jpg"
+                    alt="" class="picture-added-hotel">
+                <h3>Hotel Berlin</h3>
+                <span>Free rooms: 15</span>
+            </a> --}}
         </div>
-    
+
     {{else}}
         <div class="guest">There are no Hotels found...</div>
     {{/if}}
 
 </section>
-
-{{!-- <main>
-
-    <h1 class="text-center">Products</h1>
-    <section>
-        <a href="/product/create" class="btn btn-warning ">Create Product</a>
-        {{!-- <form class="search float-right" method="GET">
-            <label>Search: </label>
-            <input type="text" name="search">
-            <input type="submit" class="btn btn-primary" value="Search">
-        </form> --}}
-    </section>
-
-    {{#if products}}
-
-    <div class="container">
-        <div class="">
-
-            {{#each products}}
-            {{> product}}
-            {{/each}}
-
-        </div>
-    </div>
-
-    {{else}}
-        <h3 class="text-center">No products...</h3>
-    {{/if}}
-
-</main> --}}

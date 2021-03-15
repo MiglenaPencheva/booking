@@ -1,7 +1,7 @@
 const express = require('express');
 const cookieParser = require('cookie-parser');
 const handlebars = require('express-handlebars');
-// const { auth } = require('../middlewares/authMiddleware');
+const { auth } = require('../middlewares/authMiddleware');
 
 module.exports = function (app) {
 
@@ -17,5 +17,5 @@ module.exports = function (app) {
 
     app.use(cookieParser());
 
-    // app.use(auth);
+    app.use(auth);
 };
