@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const hotelScheme = new mongoose.Schema({
-    name: {
+    hotel: {
         type: String,
         required: true,
         unique: true,
