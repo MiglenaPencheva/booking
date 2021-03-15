@@ -41,7 +41,7 @@ router.post('/:id/edit', async (req, res) => {
     let hotelData = extractData(req);
     try {
         const hotel = await getOne(req.params.id, req.user._id);
-        if (hotel.creator == req.user._id) {
+        if (hotel.owner == req.user._id) {
             await edit(req.params.id, hotelData);
             res.redirect(`/hotel/${req.params.id}/details`);
         }

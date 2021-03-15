@@ -1,36 +1,16 @@
 <section id="viewAddhotel">
     <h2>Edit existing hotel</h2>
     <form id="formAddhotel" method="POST">
+
         <label for="hotel">Hotel name:</label>
-        <input type="text" id="hotel" name="hotel" value="{{hotel.hotel}}">
+        <input type="text" id="hotel" name="hotel" value="{{hotel}}">
         <label for="city">City:</label>
-        <input type="text" id="city" name="city" value="{{hotel.city}}">
+        <input type="text" id="city" name="city" value="{{city}}">
         <label for="free-rooms">Free rooms:</label>
-        <input type="number" id="free-rooms" name="free-rooms" value="{{hotel.freeRooms}}">
+        <input type="number" id="free-rooms" name="freeRooms" value="{{freeRooms}}">
         <label for="imgUrl">Image:</label>
-        <input type="text" id="imgUrl" name="imgUrl"
-            value="{{hotel.imageUrl}}">
+        <input type="text" id="imgUrl" name="imageUrl" value="{{imageUrl}}">
 
         <input type="submit" class="create" value="Edit">
     </form>
 </section>
-
-{{!-- <main>
-    <form class="text-center border border-light p-5" method="POST">
-        <h1>Edit Product</h1>
-        <div class="form-group">
-            <label for="title">Title</label>
-            <input type="text" class="form-control" placeholder="Product name" value="{{title}}" name="title">
-        </div>
-        <div class="form-group">
-            <label for="description">Description</label>
-            <textarea class="form-control" placeholder="Description" name="description">{{description}}</textarea>
-        </div>
-        <div class="form-group">
-            <label for="imageUrl">Image url</label>
-            <input type="text" class="form-control" placeholder="Image Url" value="{{imageUrl}}" name="imageUrl">
-        </div>
-
-        <button type="submit" class="btn btn-primary">Edit</button>
-    </form>
-</main> --}}

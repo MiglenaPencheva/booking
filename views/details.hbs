@@ -2,49 +2,23 @@
     <h2>Details</h2>
     <div class="hotel-ticket">
         <div class="hotel-left">
-            <img src="{{hotel.imageUrl}}" alt="{{hotel.hotel}}">
+            <img src="{{hotel.imageUrl}}" alt="">
         </div>
         <div class="hotel-right">
             <div><h3>{{hotel.hotel}}</h3></div>
-            <div>
-                {{hotel.city}}
-            </div>
+            <div>{{hotel.city}}</div>
             <p><span>Free rooms: {{hotel.freeRooms}}</span> </p>
 
-            <p><span class="green">You already have booked a room</span> </p>
-    
-            <a href="" class="book">Book</a>
-            <a href="" class="edit">Edit</a>
-            <a href="" class="remove">Delete</a>
-            
+            {{#if hotel.isOwn}}
+                <a href="/hotel/{{hotel._id}}/edit" class="edit">Edit</a>
+                <a href="/hotel/{{hotel._id}}/delete" class="remove">Delete</a>
+            {{else}}
+                {{#if hotel.isBooked}}
+                    <p><span class="green">You already have booked a room</span> </p>
+                {{else}}
+                    <a href="/hotel/{{hotel._id}}/book" class="book">Book</a>
+                {{/if}}
+            {{/if}}
         </div>
     </div>
 </section>
-
-{{!-- <main>
-    <div class="container">
-        <h1 class="my-4">Title : {{product.title}}</h1>
-
-        <div class="row">
-
-            <div class="col-md-8">
-                <img class="img-fluid" src="{{producte.imageUrl}}" alt="{{product.title}}" />
-            </div>
-
-            <div class="col-md-4 text-center">
-                {{!-- <h4 class="my-3">Duration</h4>
-                <p>4 weeks</p> --}}
-                <h3 class="my-3">Description</h3>
-                <p>{{product.title}} is {{product.description}}</p>
-
-                {{#if product.isOwn}}
-                <a class="btn btn-danger" href="/product/{{product._id}}/delete">Delete</a>
-                <a class="btn btn-warning" href="/product/{{product._id}}/edit">Edit</a>
-
-                {{else}}
-
-                {{/if}}
-            </div>
-        </div>
-    </div>
-</main> --}}
