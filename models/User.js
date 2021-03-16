@@ -8,7 +8,7 @@ const userScheme = new mongoose.Schema({
         required: ['Email is required'],
         unique: true,
         validate: {
-            validator: /^[a-zA-Z0-9]+([\.-]?[a-zA-Z0-9]+)*@[a-zA-Z0-9]+([\.-]?[a-zA-Z0-9]+)*(\.[a-z]{2,3})+$/,
+            validator: /^[a-zA-Z0-9]+([\.-_]?[a-zA-Z0-9]+)*@[a-zA-Z0-9]+([\.-]?[a-zA-Z0-9]+)*(\.[a-z]{2,3})+$/,
             message: 'Valid email address required'
         },
     },
